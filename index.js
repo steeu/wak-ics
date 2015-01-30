@@ -2,7 +2,16 @@
 /**
  * ics calendar
  * internet media type: text/calendar
+ * addHttpRequestHandler('(?i)^/calendar$', 'iCalendar.js', 'feed');
  */
+
+
+var feed = function(request, response) {
+
+    response.contentType = 'text/calendar';
+
+    return 'calendar';
+}
 
 
 /**
@@ -71,6 +80,3 @@ var renderEvent = function(event) {
 		return e;		
 	}
 };
-
-exports.vEvent    = vEvent;
-exports.vCalendar = vCalendar;
